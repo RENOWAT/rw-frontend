@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  REST_BACKEND: 'https://renowat-backend.herokuapp.com',
 };
