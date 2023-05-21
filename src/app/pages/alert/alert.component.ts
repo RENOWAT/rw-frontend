@@ -6,7 +6,7 @@ import {AlertService} from '@services/core/alert.service';
 import {AlertType} from '@classes/enums/alert.type';
 
 @Component({
-  selector: 'app-alert',
+  selector: 'alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css']
 })

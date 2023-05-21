@@ -1,0 +1,47 @@
+.presentation {
+  padding: 40px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.card {
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+}
+
+li {
+  padding: 5px 0;
+  color: #555;
+}
