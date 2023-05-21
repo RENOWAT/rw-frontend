@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span>Renowat</span>
+    <div class="spacer"> </div>
+    <div>
+      <button routerLink="/home" *ngIf="!isAuthenticated()"  mat-button>
+        <span>Hogares</span>
+      </button>
+      <button  [matMenuTriggerFor]="profile" *ngIf="!isAuthenticated()"  mat-button>
+        <mat-icon>drag_indicator</mat-icon>
+        <span>Conócenos</span>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-menu #profile="matMenu" xPosition="before">
+    <button mat-menu-item routerLink="/home/about">
+      <mat-icon>shopping_basket</mat-icon>
+      <span>Sobre nosotros</span>
+    </button>
+    <button mat-menu-item routerLink="/home/contact">
+      <mat-icon>shopping_basket</mat-icon>
+      <span>Contacto</span>
+    </button>
+  </mat-menu>
+
+

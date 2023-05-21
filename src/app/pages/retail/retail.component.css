@@ -1,0 +1,22 @@
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.image-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
