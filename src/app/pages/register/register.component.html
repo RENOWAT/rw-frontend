@@ -1,0 +1,54 @@
+<mat-card style="text-align: center;">
+  <mat-card-content *ngIf="!registerFinished">
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+      <h2>Registro</h2>
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error *ngIf="registrationForm.get('firstName').invalid && (registrationForm.get('firstName').dirty || registrationForm.get('firstName').touched)">Please enter your first name.</mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label>Family Name</mat-label>
+        <input matInput formControlName="familyName">
+        <mat-error *ngIf="registrationForm.get('familyName').invalid && (registrationForm.get('familyName').dirty || registrationForm.get('familyName').touched)">Please enter your family name.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="registrationForm.get('email').invalid && (registrationForm.get('email').dirty || registrationForm.get('email').touched)">Please enter a valid email address.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Mobile</mat-label>
+        <input matInput formControlName="mobile">
+        <mat-error *ngIf="registrationForm.get('mobile').invalid && (registrationForm.get('mobile').dirty || registrationForm.get('mobile').touched)">Please enter a valid mobile.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>DNI</mat-label>
+        <input matInput formControlName="dni">
+        <mat-error *ngIf="registrationForm.get('dni').invalid && (registrationForm.get('dni').dirty || registrationForm.get('dni').touched)">Please enter a valid dni.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address">
+        <mat-error *ngIf="registrationForm.get('address').invalid && (registrationForm.get('address').dirty || registrationForm.get('address').touched)">Please enter a valid address.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="registrationForm.get('password').invalid && (registrationForm.get('password').dirty || registrationForm.get('password').touched)">Please enter a password with at least 8 characters.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword">
+        <mat-error *ngIf="registrationForm.get('confirmPassword').invalid && (registrationForm.get('confirmPassword').dirty || registrationForm.get('confirmPassword').touched)">Please confirm your password.</mat-error>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Register</button>
+    </form>
+  </mat-card-content>
+  <div *ngIf="registerFinished">
+    <br>
+    <p>¡Registro completado con éxito!</p>
+    <button mat-raised-button color="primary" (click)="login()">Iniciar sesión</button>
+  </div>
+</mat-card>

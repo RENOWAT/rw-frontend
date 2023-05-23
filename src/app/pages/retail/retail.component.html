@@ -2,5 +2,5 @@
 
 
 <div class="image-container" >
-  <img  *ngFor="let image of images"  src="{{ image.url }}" class="image-item"  >
+  <img  *ngFor="let image of images"  src="{{ image.url }}" class="image-item"  (click)="register(image.id)" >
 </div>

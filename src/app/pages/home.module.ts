@@ -9,6 +9,7 @@ import { AlertComponent } from './alert/alert.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RetailComponent } from './retail/retail.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RetailComponent } from './retail/retail.component';
     AlertComponent,
     ContactComponent,
     NavbarComponent,
-    RetailComponent
+    RetailComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
