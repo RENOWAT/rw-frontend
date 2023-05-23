@@ -9,6 +9,18 @@
         <mat-icon>drag_indicator</mat-icon>
         <span>Conócenos</span>
       </button>
+      <button  [matMenuTriggerFor]="profile2" *ngIf="isAuthenticated()"  mat-button>
+        <mat-icon>drag_indicator</mat-icon>
+        <span>Conócenos</span>
+      </button>
+      <button routerLink="/home/login" *ngIf="!isAuthenticated()" mat-button>
+        <mat-icon>lock</mat-icon>
+        <span>Accede</span>
+      </button>
+      <button (click)="logout()" *ngIf="isAuthenticated()" mat-button>
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Logout</span>
+      </button>
     </div>
   </mat-toolbar>
 
@@ -23,4 +35,14 @@
     </button>
   </mat-menu>
 
+<mat-menu #profile2="matMenu" xPosition="before">
+  <button mat-menu-item routerLink="/home/about" >
+    <mat-icon>grade</mat-icon>
+    <span>Sobre nosotros</span>
+  </button>
+  <button mat-menu-item routerLink="/home/contact">
+    <mat-icon>shopping_basket</mat-icon>
+    <span>Contacto</span>
+  </button>
+</mat-menu>
 
