@@ -11,6 +11,11 @@ export class NavbarComponent {
 
   constructor(private sessionService: SessionService, private router: Router) {}
 
+  logout(): void {
+    this.sessionService.destroySession();
+    this.router.navigate(['/']);
+  }
+
   isAuthenticated(): boolean {
     return this.sessionService.isAuthenticated();
   }

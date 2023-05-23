@@ -31,9 +31,9 @@ export class SessionService {
         map(jsonToken => {
           const jwtHelper = new JwtHelperService();
           return {
-            token: jsonToken.body.token,
-            name: jwtHelper.decodeToken(jsonToken.body.token).name,
-            role: jwtHelper.decodeToken(jsonToken.body.token).role
+            token: jsonToken.token,
+            name: jwtHelper.decodeToken(jsonToken.token).name,
+            role: jwtHelper.decodeToken(jsonToken.token).role
           }
         })
       );
