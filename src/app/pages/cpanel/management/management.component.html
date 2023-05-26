@@ -1,0 +1,39 @@
+<div class="table-container mat-elevation-z8">
+  <h2>Tus datos</h2>
+  <mat-table [dataSource]="dataSource" class="table" matSort>
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="familyName">
+      <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.familyName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dni">
+      <mat-header-cell *matHeaderCellDef> DNI </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dni}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="mobile">
+      <mat-header-cell *matHeaderCellDef> Móvil </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.mobile}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Dirección </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="registrationDate">
+      <mat-header-cell *matHeaderCellDef> Fecha alta </mat-header-cell>
+      <mat-cell *matCellDef="let element">  {{ convertToDate(element.registrationDate) }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+
+<app-crud (read)="read($event)" [data]="contracts"></app-crud>

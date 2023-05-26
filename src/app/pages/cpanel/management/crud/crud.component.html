@@ -1,0 +1,51 @@
+<div class="table-container mat-elevation-z8">
+  <h2>Tus contratos</h2>
+  <mat-table  [dataSource]="dataSource"  matSort>
+    <mat-header-row *matHeaderRowDef="columnsHeader"></mat-header-row>
+    <mat-row *matRowDef="let item; columns: columnsHeader"></mat-row>
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Dirección </mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="productName">
+      <mat-header-cell *matHeaderCellDef> Producto </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.productName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Contrato </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="planName">
+      <mat-header-cell *matHeaderCellDef> Plan </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.planName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="cups">
+      <mat-header-cell *matHeaderCellDef> Cups </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.cups}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="tariff">
+      <mat-header-cell *matHeaderCellDef> Tarifa </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.tariff}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button (click)="onCreate()" *ngIf="createAction==true"  mat-icon-button matSuffix>
+          <mat-icon color="warn">add</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let item">
+        <button (click)="onRead(item)" *ngIf="readAction==true"  mat-icon-button matSuffix>
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+
+  <div class="paginator-container">
+    <div class="paginator">
+      <button mat-button (click)="previousPage()" [disabled]="!hasPreviousPage()">Previous</button>
+      <button mat-button (click)="nextPage()" [disabled]="!hasNextPage()">Next</button>
+    </div>
+  </div>
+
+</div>

@@ -17,7 +17,7 @@ export class SessionService {
   private session: Session;
 
   constructor(private httpService: HttpService, private router: Router) {
-
+    this.session = this.getLocalSession();
   }
 
   public getsession(): Session {

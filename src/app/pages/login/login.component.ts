@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit  {
   private handleLoginResult(results: any) {
     this.sessionService.createSession(results.token, results.name, results.email, results.role)
       .subscribe();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home/cpanel']);
   }
 
   isAuthenticated(): boolean {

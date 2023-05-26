@@ -1,0 +1,17 @@
+<h1 mat-dialog-content><strong>{{title}}</strong></h1>
+<mat-dialog-content>
+  <ng-container *ngIf="(object | async) as data">
+    <ul>
+      <li><strong>Dirección: </strong>{{data.address}}</li>
+      <li><strong>Estado: </strong>{{ convertStatus(data.status) }} </li>
+      <li><strong>Contrato: </strong>{{data.id}}</li>
+      <li><strong>Producto: </strong>{{data.productName}}</li>
+      <li><strong>Plan: </strong>{{data.planName}}</li>
+      <li><strong>Cups: </strong>{{data.cups}}</li>
+      <li><strong>Tarifa: </strong>{{data.tariff}}</li>
+    </ul>
+  </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button>Close</button>
+</mat-dialog-actions>
