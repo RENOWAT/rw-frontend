@@ -6,6 +6,7 @@ import {RetailComponent} from './retail/retail.component';
 import {ContactComponent} from './contact/contact.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
+import {CpanelModule} from './cpanel/cpanel.module';
 
 const routes: Routes = [
 
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path: 'contact', component: ContactComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'cpanel', loadChildren: () => CpanelModule},
     ]
   },
 
