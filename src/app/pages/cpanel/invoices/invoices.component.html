@@ -3,9 +3,13 @@
   <option *ngFor="let subscription of subscriptions" [value]="subscription.id">{{ subscription.planName }} - {{ subscription.address }}</option>
 </select>
 
-
-
-
+<div class="chart-container">
+  <canvas id="canvas"></canvas>
+</div>
+<div class="chart-btns">
+  <button (click)="prevMonth()" class="chart-button">Mes anterior</button>
+  <button (click)="nextMonth()" class="chart-button">Mes siguiente</button>
+</div>
 
 <div class="table-container mat-elevation-z8">
   <h2>Histórico de facturas</h2>
