@@ -1,0 +1,77 @@
+.chart-container {
+  width: 75%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  padding-left: 25%;
+}
+
+.chart-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chart-btns button {
+  font-size: 12px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chart-btns button:hover {
+  background-color: #f2f2f2;
+}
+
+.table-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.paginator-container {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.paginator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  margin: 20px auto;
+}
+
+
+.custom-select {
+  display: block;
+  max-width: 25%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para el selector de planes al pasar el cursor por encima */
+.custom-select:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para el selector de planes al abrirlo */
+.custom-select:active,
+.custom-select:focus {
+  background-color: #e0e0e0;
+}
+
