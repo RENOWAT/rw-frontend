@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+  <div class="container">
+    <mat-form-field class="full-width">
+      <mat-label>Plan</mat-label>
+      <mat-select [(value)]="selectedPlan" (selectionChange)="setPlan($event)">
+        <mat-option *ngFor="let plan of planNames" [value]="plan">
+          {{ plan }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Dirección</mat-label>
+      <input [(ngModel)]="subscription.address"  matInput required type="text "/>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Producto</mat-label>
+      <input [(ngModel)]="subscription.productName" matInput type="text" readonly/>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Tarifa</mat-label>
+      <input [(ngModel)]="subscription.tariff" matInput type="text" readonly>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Cups</mat-label>
+      <input [(ngModel)]="subscription.cups" matInput required type ="text" >
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button cdkFocusInitial mat-dialog-close mat-raised-button>Close</button>
+  <button (click)="create()"  [disabled]=invalid() color="primary" mat-raised-button>Create
+  </button>
+</mat-dialog-actions>
+
