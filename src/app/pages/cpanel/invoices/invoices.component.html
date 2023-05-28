@@ -1,0 +1,52 @@
+<h1>Selecciona un contrato</h1>
+<select  class="custom-select"  [(ngModel)]="selectedSubscription" (change)="onSubscriptionChange(selectedSubscription)">
+  <option *ngFor="let subscription of subscriptions" [value]="subscription.id">{{ subscription.planName }} - {{ subscription.address }}</option>
+</select>
+
+
+
+
+
+<div class="table-container mat-elevation-z8">
+  <h2>Histórico de facturas</h2>
+  <mat-table [dataSource]="dataSource" class="table" matSort>
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef> Año </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.year}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="month">
+      <mat-header-cell *matHeaderCellDef> Mes </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.month}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="amount">
+      <mat-header-cell *matHeaderCellDef> Importe (€) </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="consumption">
+      <mat-header-cell *matHeaderCellDef> Consumo (kWh) </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.consumption}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="pdf(element)">
+          <mat-icon>assignment</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <div class="paginator-container">
+    <div class="paginator">
+      <button mat-button (click)="previousPage()" [disabled]="!hasPreviousPage()">Previous</button>
+      <button mat-button (click)="nextPage()" [disabled]="!hasNextPage()">Next</button>
+    </div>
+  </div>
+</div>
+

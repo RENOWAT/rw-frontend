@@ -3,6 +3,7 @@ import {environment} from '@env';
 import {HttpService} from '@services/core/http.service';
 import {Observable} from 'rxjs';
 import {Subscription} from '@classes/subscription';
+import {Invoice} from '@classes/invoice';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class BillingService {
   static END_POINT_SUBSCRIPTION = environment.REST_BACKEND + '/subscription';
   static END_POINT_USER = environment.REST_BACKEND + '/users/search';
   static END_POINT_PLAN = environment.REST_BACKEND + '/plan';
+  static END_POINT_INVOICE = environment.REST_BACKEND + '/invoice';
 
   subscriptionData: Subscription;
 
@@ -32,6 +34,13 @@ export class BillingService {
 
   getPlans(): Observable<any[]> {
     return this.httpService.get(BillingService.END_POINT_PLAN);
+  }
+
+  getInvoices(Id: number): Observable<Invoice[]> {
+    const params = { id: Id.toString() };
+    return this.httpService
+      .paramsFrom(params)
+      .get(BillingService.END_POINT_INVOICE);
   }
 
 }

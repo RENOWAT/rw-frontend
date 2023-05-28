@@ -4,6 +4,7 @@ import {CpanelComponent} from './cpanel.component';
 import {Role} from '@classes/enums/role.model';
 import {ManagementComponent} from './management/management.component';
 import {AuthGuardService} from '@services/core/auth-guard.service';
+import {InvoicesComponent} from './invoices/invoices.component';
 
 const routes: Routes = [
 
@@ -12,7 +13,10 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     data: {roles: [Role.CUSTOMER]},
     children: [
-      {path: '', component: ManagementComponent,
+      {path: '', component: InvoicesComponent,
+        canActivate: [AuthGuardService],
+        data: {roles: [Role.CUSTOMER]}},
+      {path: 'management', component: ManagementComponent,
         canActivate: [AuthGuardService],
         data: {roles: [Role.CUSTOMER]}},
     ]

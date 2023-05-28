@@ -7,6 +7,7 @@ import { ManagementComponent } from './management/management.component';
 import { CrudComponent } from './management/crud/crud.component';
 import { ReadDialogComponent } from './management/dialogs/read-dialog.component';
 import { CreationDialogComponent } from './management/dialogs/creation-dialog.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CreationDialogComponent } from './management/dialogs/creation-dialog.co
     CrudComponent,
     ReadDialogComponent,
     CreationDialogComponent,
+    InvoicesComponent,
   ],
   imports: [
     CommonModule,
