@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {of} from 'rxjs';
 import {ReadDialogComponent} from './dialogs/read-dialog.component';
 import {BillingService} from '@services/billing.service';
+import {CreationDialogComponent} from './dialogs/creation-dialog.component';
 
 
 @Component({
@@ -38,5 +39,15 @@ export class ManagementComponent implements OnInit{
   convertToDate(dateString: string): Date {
     return new Date(dateString);
   }
+
+  create(): void {
+    this.dialog.open(CreationDialogComponent, {
+      data: {
+        title: 'Da de alta tu contrato',
+        object: this.billingService.getPlans()
+      }
+    });
+  }
+
 
 }
