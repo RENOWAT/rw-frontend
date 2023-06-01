@@ -174,4 +174,8 @@ export class HttpService {
     }
   }
 
+  getPdf(endpoint: string, headers?: any): Observable<ArrayBuffer> {
+    return this.http.get(endpoint, { responseType: 'arraybuffer', ...headers });
+  }
+
 }

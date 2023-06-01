@@ -82,10 +82,6 @@ export class InvoicesComponent implements OnInit{
     return (this.currentPageIndex + 1) * this.resultsPerPage < this.tableData.length;
   }
 
-  pdf(invoice: any): void {
-    console.log(invoice.id);
-  }
-
   createChart(){
     this.currentMonthIndex = this.monthlyBilling.length -12;
     const labels = this.monthlyBilling.slice(-12).map(d => d.monthyear);
@@ -149,6 +145,19 @@ export class InvoicesComponent implements OnInit{
       }]
     };
     this.chart.update();
+  }
+
+  pdf(invoice: any): void {
+    this.billingService.getInvoicePdf(invoice.id)
+      .subscribe(response => {
+        const blob = new Blob([response], { type: 'application/pdf' });
+        const blobUrl = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = 'factura_'+ invoice.year + '_'+ invoice.month + '.pdf';
+        link.click();
+        URL.revokeObjectURL(blobUrl);
+      });
   }
 
 }
