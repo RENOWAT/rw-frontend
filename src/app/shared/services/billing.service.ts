@@ -43,4 +43,10 @@ export class BillingService {
       .get(BillingService.END_POINT_INVOICE);
   }
 
+  getInvoicePdf(id: string): Observable<ArrayBuffer> {
+    const url = `${BillingService.END_POINT_INVOICE}/${id}`;
+    return this.httpService
+      .getPdf(url);
+  }
+
 }
