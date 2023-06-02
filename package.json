@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "1.0.1-Relase",
+  "version": "1.0.2-Release",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
