@@ -1,5 +1,13 @@
 <mat-toolbar color="primary">
-    <span>Renowat</span>
+  <header>
+    <ng-container *ngIf="!isAuthenticated(); else authenticatedBlock">
+      <a class="logo" routerLink="/home">RENOWAT</a>
+    </ng-container>
+    <ng-template #authenticatedBlock>
+      <a class="logo" routerLink="/home/cpanel">RENOWAT</a>
+    </ng-template>
+  </header>
+
     <div class="spacer"> </div>
     <div>
       <button routerLink="/home" *ngIf="!isAuthenticated()"  mat-button>

@@ -7,3 +7,10 @@ mat-card {
 mat-form-field {
   display: block;
 }
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}

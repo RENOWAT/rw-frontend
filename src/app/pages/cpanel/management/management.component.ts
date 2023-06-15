@@ -41,11 +41,14 @@ export class ManagementComponent implements OnInit{
   }
 
   create(): void {
-    this.dialog.open(CreationDialogComponent, {
+    const dialogRef = this.dialog.open(CreationDialogComponent, {
       data: {
         title: 'Da de alta tu contrato',
         object: this.billingService.getPlans()
       }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.contracts =  this.billingService.getSubscriptions();
     });
   }
 

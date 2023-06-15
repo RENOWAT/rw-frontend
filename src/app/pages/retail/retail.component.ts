@@ -11,9 +11,10 @@ export class RetailComponent {
 
   constructor(private router: Router, private registerService: RegisterService) {}
 
+
   images = [
-    { id: 1, url: 'https://source.unsplash.com/user/c_v_r' },
-    { id: 2, url: 'https://source.unsplash.com/user/c_v_r' },
+    { id: 1, url: 'assets/planestable.png'},
+    { id: 2, url: 'assets/planonline.png' },
   ];
 
   register(id: number) {
