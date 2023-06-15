@@ -18,7 +18,8 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    if (request.url === environment.REST_BACKEND + '/users/token') {
+    if (request.url === environment.REST_BACKEND + '/users/token' ||
+      request.url === environment.REST_BACKEND + '/customers/create' ) {
       return next.handle(request);
     }
     else {
